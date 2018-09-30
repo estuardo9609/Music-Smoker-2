@@ -9,6 +9,9 @@ export class AppHeaderComponent implements OnInit {
 
   constructor() { }
 
+  title = 'Music Smoker';
+  
+
   ngOnInit() {
   }
 

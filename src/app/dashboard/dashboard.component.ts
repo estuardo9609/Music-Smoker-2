@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Playlist, Playlists } from '../playlist';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   constructor() { }
+
+  playlists = Playlists;
 
   ngOnInit() {
   }
