@@ -15,11 +15,5 @@ export const Playlists : Playlist[] = [
         genre: 'Rock', rate: 5 },
     {   name: 'Covers', 
         description: 'Popular songs covers by different artists.' ,
-        genre: 'Other', rate: 3.8 }    ,
-        {   name: 'Covers', 
-        description: 'Popular songs covers by different artists.' ,
-        genre: 'Other', rate: 3.8 }    ,
-        {   name: 'Covers', 
-        description: 'Popular songs covers by different artists.' ,
-        genre: 'Other', rate: 3.8 }    
+        genre: 'Other', rate: 3.8 } 
 ];
