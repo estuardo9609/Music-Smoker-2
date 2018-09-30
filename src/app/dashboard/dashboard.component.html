@@ -1,5 +1,21 @@
-<ul class="dashboard-playlists">
-  <li *ngFor="let Playlist of playlists">
-    Playlist Name: {{Playlist.name}} Description: {{Playlist.description}} Genre: {{Playlist.Genre}} Rate: {{Playlist.Rate}}
-  </li>
-</ul>
+<div class = "container-fluid">
+    <ul class="dashboard-playlists">
+        <div class="Row">
+        <li *ngFor="let Playlist of playlists" class="col-4">
+                  <div class="card" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{Playlist.name}}</h5>
+                        <h6 class="card-subtitle mb-2">Genre: {{Playlist.Genre}}</h6>
+                        <p class="card-text">Description: {{Playlist.description}} </p>
+                        <p>Rate: {{Playlist.Rate}}</p>
+                        <a href="#" class="card-link">Edit</a>
+                        <a href="#" class="card-link">Delete</a>
+                        <a href="#" class="card-link">Songs</a>
+                      </div>
+                  </div>
+        </li>
+      </div>
+    </ul>
+</div>
+
+         
