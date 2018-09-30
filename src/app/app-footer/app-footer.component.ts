@@ -9,7 +9,7 @@ export class AppFooterComponent implements OnInit {
 
   constructor() { }
 
-  description = 'This page was created in 2018. @EstuardoEstrada';
+  description = 'Explore, Share, Enjoy';
 
   ngOnInit() {
   }
