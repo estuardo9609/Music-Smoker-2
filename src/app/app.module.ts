@@ -8,6 +8,7 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
 import { MySelectorBarComponent } from './my-selector-bar/my-selector-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LocalStorageServiceService } from './local-storage-service.service';
+import { CreatePlaylistComponent } from './create-playlist/create-playlist.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LocalStorageServiceService } from './local-storage-service.service';
     AppHeaderComponent,
     AppFooterComponent,
     MySelectorBarComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreatePlaylistComponent
   ],
   imports: [
     BrowserModule,
