@@ -1,3 +1,5 @@
-<p>
-  dashboard works!
-</p>
+<ul class="dashboard-playlists">
+  <li *ngFor="let Playlist of playlists">
+    Playlist Name: {{Playlist.name}} Description: {{Playlist.description}} Genre: {{Playlist.Genre}} Rate: {{Playlist.Rate}}
+  </li>
+</ul>

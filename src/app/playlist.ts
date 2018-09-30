@@ -16,4 +16,4 @@ export const Playlists : Playlist[] = [
     {   name: 'Covers', 
         description: 'Popular songs covers by different artists.' ,
         genre: 'Other', rate: 3.8 }    
-]
+];
