@@ -7,6 +7,7 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { MySelectorBarComponent } from './my-selector-bar/my-selector-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LocalStorageServiceService } from './local-storage-service.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    LocalStorageServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

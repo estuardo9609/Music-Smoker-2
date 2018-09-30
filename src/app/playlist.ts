@@ -1,9 +1,17 @@
 
-export class Playlist {
+/*export class Playlist {
     name: string;
     description: string;
     genre: string;
     rate: number;
+}*/
+
+export interface Playlist{
+    name: string;
+    description: string;
+    genre: string;
+    rate: number;
+    hide: booleam;
 }
 
 export const Playlists : Playlist[] = [
