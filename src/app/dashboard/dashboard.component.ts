@@ -16,11 +16,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.playlists = this.localStorageService.getPlaylist();
-  }
+  } 
 
   removePlaylist(playlist: Playlist){
     const response = confirm('Are you sure you want to delete task');
-
   }
 
 }

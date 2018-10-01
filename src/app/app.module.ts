@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LocalStorageServiceService } from './local-storage-service.service';
 import { CreatePlaylistComponent } from './create-playlist/create-playlist.component';
 import { RouterContainerComponent } from './router-container/router-container.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RouterContainerComponent } from './router-container/router-container.co
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     LocalStorageServiceService
