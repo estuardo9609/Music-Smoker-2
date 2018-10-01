@@ -35,13 +35,17 @@ export class LocalStorageServiceService {
       }
    }
 
-   removePlaylist(playlist: Playlist){
-      for(let i = 0; this.playlists.length; i++){
-        if(playlist == this.playlists[i]){
+   removePlaylist(playlist: Playlist):void{
+    if(localStorage.getItem('playlists')===null){}
+    else{
+      this.playlists = JSON.parse(localStorage.getItem('playlists'));
+      for(var i = 0; i<this.playlists.length; i++){
+        if(playlist.name == this.playlists[i].name){
           this.playlists.splice(i, 1);
           localStorage.setItem('playlists',JSON.stringify(this.playlists));
         }
       }
-   }
+    }
+  }
 }
  

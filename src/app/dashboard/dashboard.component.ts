@@ -19,7 +19,10 @@ export class DashboardComponent implements OnInit {
   } 
 
   removePlaylist(playlist: Playlist){
-    const response = confirm('Are you sure you want to delete task');
+    const response = confirm('Are you sure you want to delete task?');
+    if(response){
+        this.localStorageService.removePlaylist(playlist);
+    }
   }
 
 }

@@ -8,9 +8,8 @@
                         <h6 class="card-subtitle mb-2">Genre: {{Playlist.genre}}</h6>
                         <p class="card-text">Description: {{Playlist.description}} </p>
                         <p>Rate: {{Playlist.rate}}</p>
-                        <a href="#" class="card-link">Edit</a>
-                        <a href="#" class="card-link">Delete</a>
-                        <a href="#" class="card-link">Songs</a>
+                        <a href="#" (click)="removePlaylist(Playlist)" class="btn btn-danger">Delete</a>
+                        <a href="#" class="btn btn-primary">Edit</a>
                       </div>
                   </div>
         </li>
