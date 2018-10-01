@@ -15,23 +15,27 @@ export class LocalStorageServiceService {
 
    getPlaylist(): Playlist[]{
      if(localStorage.getItem('playlists') === null){
-       this.playlists
+       this.playlists = [];
      } else{
        this.playlists = JSON.parse(localStorage.getItem('playlist'));
      }
      return this.playlists;
    }
 
-   addPlaylist(playlist:Playlist):void{
+   addPlaylist(playlist: Playlist):void{
+     console.log(playlist.description,playlist.name, playlist.genre,playlist.rate, playlist.hide);
       this.playlists.unshift(playlist);
       let playlists;
+
       if(localStorage.getItem('playlists')===null){
         playlists = [];
         playlists.unshift(playlist);
         localStorage.setItem('playlists',JSON.stringify(playlists));
       } else{
+        console.log(playlist.description);
         playlists = JSON.parse(localStorage.getItem('playlists'));
         playlists.unshift(playlist);
+        localStorage.setItem('playlists',JSON.stringify(playlists));
       }
    }
 

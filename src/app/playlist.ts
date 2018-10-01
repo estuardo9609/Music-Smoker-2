@@ -14,7 +14,7 @@ export interface Playlist{
     hide: boolean;
 }
 
-export const Playlists : Playlist[] = [
+/*export const Playlists : Playlist[] = [
     {   name: 'Radio-Music', 
         description: 'List of our favorites from the radio 2018' ,
         genre: 'Pop', rate: 4.5, hide: false },
@@ -24,4 +24,4 @@ export const Playlists : Playlist[] = [
     {   name: 'Covers', 
         description: 'Popular songs covers by different artists.' ,
         genre: 'Other', rate: 3.8 , hide: false} 
-];
+];*/
