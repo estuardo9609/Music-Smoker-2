@@ -11,6 +11,7 @@ import { LocalStorageServiceService } from './local-storage-service.service';
 import { CreatePlaylistComponent } from './create-playlist/create-playlist.component';
 import { RouterContainerComponent } from './router-container/router-container.component';
 import { AppRoutingModule } from './app-routing.module';
+import { EditPlaylistComponent } from './edit-playlist/edit-playlist.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     MySelectorBarComponent,
     DashboardComponent,
     CreatePlaylistComponent,
-    RouterContainerComponent
+    RouterContainerComponent,
+    EditPlaylistComponent
   ],
   imports: [
     BrowserModule,

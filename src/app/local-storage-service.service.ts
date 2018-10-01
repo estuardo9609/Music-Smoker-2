@@ -22,7 +22,7 @@ export class LocalStorageServiceService {
    addPlaylist(playlist: Playlist):void{
      this.playlists = [];
      this.playlists.unshift(playlist);
-    let playlists;
+      let playlists;
 
       if(localStorage.getItem('playlists')===null){
         playlists = [];
@@ -46,6 +46,51 @@ export class LocalStorageServiceService {
         }
       }
     }
+  }
+  
+  editPlaylist(indexArray: number, playlist: Playlist):void{
+    if(localStorage.getItem('playlists')===null){}
+    else{
+      this.playlists = JSON.parse(localStorage.getItem('playlists'));
+      this.playlists[indexArray].name = playlist.name;
+      this.playlists[indexArray].description = playlist.description;
+      this.playlists[indexArray].genre = playlist.genre;
+      this.playlists[indexArray].rate = playlist.rate;
+      localStorage.setItem('playlists',JSON.stringify(this.playlists));
+      }
+  }
+
+  getIndex(playlist: Playlist): number{
+    var indexNum = 0;
+    if(localStorage.getItem('playlists')===null){}
+    else{
+      this.playlists = JSON.parse(localStorage.getItem('playlists'));
+      for(var i = 0; i<this.playlists.length; i++){
+        if(playlist.name == this.playlists[i].name){
+          indexNum = i;
+        }
+      }
+    }
+    return indexNum;
+  }
+
+  getUniquePlaylist(name: string): Playlist{
+    var playlist: Playlist;
+    playlist = {name:"",
+            description:"",
+            genre:"",
+            rate: 0,
+            hide: true};
+    if(localStorage.getItem('playlists')===null){return playlist}
+    else{
+      this.playlists = JSON.parse(localStorage.getItem('playlists'));
+      for(var i = 0; i<this.playlists.length; i++){
+        if(name == this.playlists[i].name){
+          playlist = this.playlists[i];
+        }
+      }
+    }
+    return playlist;
   }
 }
  

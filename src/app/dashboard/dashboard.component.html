@@ -9,7 +9,7 @@
                         <p class="card-text">Description: {{Playlist.description}} </p>
                         <p>Rate: {{Playlist.rate}}</p>
                         <a href="#" (click)="removePlaylist(Playlist)" class="btn btn-danger">Delete</a>
-                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="#" routerLink = "/edit/{{Playlist.name}}" class="btn btn-primary">Edit</a>
                       </div>
                   </div>
         </li>
