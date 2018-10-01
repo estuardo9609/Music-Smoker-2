@@ -1,5 +1,12 @@
 <!-- Por el momento solo se tendrá el título y mas adelante se agregaran funciones -->
 <div class="jumbotron">
-    <h1>{{title}}</h1> 
-    <p>Where you can share your playlists to the world.</p> 
+    <div class="row">
+        <div class="col-9">
+            <h1>{{title}}</h1> 
+            <p>Where you can share your playlists to the world.</p> 
+        </div>
+        <div class="col-3">
+            <img [src]="fullImagePath" align="right">
+        </div>
+    </div>
 </div>

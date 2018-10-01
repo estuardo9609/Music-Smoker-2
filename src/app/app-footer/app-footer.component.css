@@ -5,3 +5,25 @@
 .footer-copyright{
     background-color: #82b74b;
 }
+
+a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+.list-unstyled a{
+    color: #191b17;
+    font-size: 25px;
+}
+
+.text-uppercase{
+    color: #191b17;
+    font-size: 35px;
+}

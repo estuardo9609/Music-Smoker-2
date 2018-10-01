@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+  fullImagePath: string;
+
+  constructor(
+  ) {
+    this.fullImagePath = '../../assets/images/MusicSimbol.png'
+   }
 
   title = 'Music Smoker';
   
