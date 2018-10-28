@@ -21,7 +21,7 @@ export class EditPlaylistComponent implements OnInit {
   }
 
   getUniquePlaylist():void{
-    this.playlist = this.localStorageService.getUniquePlaylist(this.route.snapshot.paramMap.get('name'));
+    this.playlist = this.localStorageService.getUniquePlaylist(+this.route.snapshot.paramMap.get('id'));
   }
 
   getArrayIndex():void{

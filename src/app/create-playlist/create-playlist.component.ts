@@ -21,6 +21,7 @@ export class CreatePlaylistComponent implements OnInit {
   
   addPlaylist(){
     this.playlistAdded.emit({
+      id: 0,
       name:this.name,
       description:this.description,
       genre:this.genre,
@@ -30,6 +31,7 @@ export class CreatePlaylistComponent implements OnInit {
     this.name = '';
     this.description = '';
     this.genre = '';
-    this.rate = 0;  
+    this.rate = 0;
+    alert('You have created a new playlist');
   }
 }

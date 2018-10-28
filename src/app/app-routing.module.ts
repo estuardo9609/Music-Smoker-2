@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'create-playlist', component: RouterContainerComponent },
-  { path: 'edit/:name', component: EditPlaylistComponent }
+  { path: 'edit/:id', component: EditPlaylistComponent }
 ];
  
 

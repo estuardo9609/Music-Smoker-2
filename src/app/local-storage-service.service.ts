@@ -23,13 +23,13 @@ export class LocalStorageServiceService {
      this.playlists = [];
      this.playlists.unshift(playlist);
       let playlists;
-
       if(localStorage.getItem('playlists')===null){
         playlists = [];
         playlists.unshift(playlist);
         localStorage.setItem('playlists',JSON.stringify(playlists));
       } else{
         playlists = JSON.parse(localStorage.getItem('playlists'));
+        playlist.id = playlists.length;
         playlists.unshift(playlist);
         localStorage.setItem('playlists',JSON.stringify(playlists));
       }
@@ -45,17 +45,18 @@ export class LocalStorageServiceService {
           localStorage.setItem('playlists',JSON.stringify(this.playlists));
         }
       }
+      this.sortList();
     }
   }
   
-  editPlaylist(indexArray: number, playlist: Playlist):void{
+  editPlaylist(id: number, playlist: Playlist):void{
     if(localStorage.getItem('playlists')===null){}
     else{
       this.playlists = JSON.parse(localStorage.getItem('playlists'));
-      this.playlists[indexArray].name = playlist.name;
-      this.playlists[indexArray].description = playlist.description;
-      this.playlists[indexArray].genre = playlist.genre;
-      this.playlists[indexArray].rate = playlist.rate;
+      this.playlists[id].name = playlist.name;
+      this.playlists[id].description = playlist.description;
+      this.playlists[id].genre = playlist.genre;
+      this.playlists[id].rate = playlist.rate;
       localStorage.setItem('playlists',JSON.stringify(this.playlists));
       }
   }
@@ -74,9 +75,9 @@ export class LocalStorageServiceService {
     return indexNum;
   }
 
-  getUniquePlaylist(name: string): Playlist{
+  getUniquePlaylist(id: number): Playlist{
     var playlist: Playlist;
-    playlist = {name:"",
+    playlist = {id: 0,name:"",
             description:"",
             genre:"",
             rate: 0,
@@ -85,12 +86,24 @@ export class LocalStorageServiceService {
     else{
       this.playlists = JSON.parse(localStorage.getItem('playlists'));
       for(var i = 0; i<this.playlists.length; i++){
-        if(name == this.playlists[i].name){
+        if(id == this.playlists[i].id){
           playlist = this.playlists[i];
         }
       }
     }
     return playlist;
+  }
+
+  sortList(): void{
+    var indexJson: number;
+    if(localStorage.getItem('playlists')===null){}
+    else{
+      this.playlists = JSON.parse(localStorage.getItem('playlists'));
+      for(var i = 0; i<this.playlists.length; i++){
+        this.playlists[i].id = i;
+      }
+      localStorage.setItem('playlists',JSON.stringify(this.playlists));
+    }
   }
 }
  
