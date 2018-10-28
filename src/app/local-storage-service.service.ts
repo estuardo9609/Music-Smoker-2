@@ -57,6 +57,7 @@ export class LocalStorageServiceService {
       this.playlists[id].description = playlist.description;
       this.playlists[id].genre = playlist.genre;
       this.playlists[id].rate = playlist.rate;
+      this.playlists[id].author = playlist.author;
       localStorage.setItem('playlists',JSON.stringify(this.playlists));
       }
   }
@@ -81,6 +82,7 @@ export class LocalStorageServiceService {
             description:"",
             genre:"",
             rate: 0,
+            author: "",
             hide: true};
     if(localStorage.getItem('playlists')===null){return playlist}
     else{

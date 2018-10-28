@@ -12,6 +12,7 @@ export class CreatePlaylistComponent implements OnInit {
   description: string;
   genre: string;
   rate: number;
+  author: string;
   @Output() playlistAdded = new EventEmitter<Playlist>();
 
   constructor() { }
@@ -26,6 +27,7 @@ export class CreatePlaylistComponent implements OnInit {
       description:this.description,
       genre:this.genre,
       rate:this.rate,
+      author:this.author,
       hide:true
     });
     this.name = '';

@@ -18,7 +18,11 @@
         <div>
               <label for="rate">Rate:</label>
               <input type = "text" class="form-control" name="rate" value="{{playlist.rate}}" [(ngModel)]="playlist.rate">
-        </div> 
+        </div>
+        <div>
+            <label for="author">Author:</label>
+            <input type = "text" class="form-control" name="rate" value="{{playlist.author}}" [(ngModel)]="playlist.author">
+        </div>  
         <div>
             <a href="#" (click)="editPlaylist(playlist)" class="btn btn-primary">Edit</a>
         </div>

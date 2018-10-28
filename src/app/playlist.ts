@@ -12,6 +12,7 @@ export interface Playlist{
     description: string;
     genre: string;
     rate: number;
+    author: string;
     hide: boolean;
 }
 
