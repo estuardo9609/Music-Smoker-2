@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Playlist } from '../playlist';
-import {LocalStorageServiceService} from '../local-storage-service.service';
-
+import {PlaylistManagerService} from '../playlist-manager.service';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,19 +10,28 @@ import {LocalStorageServiceService} from '../local-storage-service.service';
 })
 export class DashboardComponent implements OnInit {
   
-  playlists: Playlist[];
+  playlists;
 
-  constructor(public localStorageService: LocalStorageServiceService) { }
+  constructor(public _playlistManagerService: PlaylistManagerService) { }
 
   ngOnInit() {
-    this.playlists = this.localStorageService.getPlaylist();
+    this.getPlaylist();
   } 
 
+
+  getPlaylist(){
+    this._playlistManagerService.getPlaylist().subscribe(
+      data => {this.playlists = data},
+      err => console.error(err),
+      () => console.log('Se han cargado exitosamente los elementos')
+    );
+  }
+
   removePlaylist(playlist: Playlist){
-    const response = confirm('Are you sure you want to delete task?');
-    if(response){
-        this.localStorageService.removePlaylist(playlist);
-    }
+    this._playlistManagerService.removePlaylist(playlist).subscribe(
+      err => console.error(err),
+      () => console.log('Se ha agregado un elemento con exito')
+    );  
   }
 
 }

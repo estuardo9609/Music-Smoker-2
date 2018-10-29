@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {LocalStorageServiceService} from '../local-storage-service.service'
 import { Playlist } from '../playlist';
+import {PlaylistManagerService} from '../playlist-manager.service';
+import {Observable, of} from 'rxjs';
 
 
 @Component({
@@ -10,13 +12,15 @@ import { Playlist } from '../playlist';
 })
 export class RouterContainerComponent implements OnInit {
 
-  constructor(public localStorageService: LocalStorageServiceService) { }
+  constructor(public _PlaylistManagerService: PlaylistManagerService) { }
 
   ngOnInit() {
   }
 
   addPlaylist(playlist: Playlist){
-    this.localStorageService.addPlaylist(playlist);
+    this._PlaylistManagerService.addPlaylist(playlist).subscribe(
+      
+    );
   }
 
 }

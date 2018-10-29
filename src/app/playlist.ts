@@ -7,7 +7,7 @@
 }*/
 
 export interface Playlist{
-    id: number;
+    _id: number;
     name: string;
     description: string;
     genre: string;

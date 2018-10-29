@@ -9,6 +9,7 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
 import { MySelectorBarComponent } from './my-selector-bar/my-selector-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LocalStorageServiceService } from './local-storage-service.service';
+import {PlaylistManagerService} from './playlist-manager.service';
 import { CreatePlaylistComponent } from './create-playlist/create-playlist.component';
 import { RouterContainerComponent } from './router-container/router-container.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -32,7 +33,8 @@ import { EditPlaylistComponent } from './edit-playlist/edit-playlist.component';
     HttpClientModule
   ],
   providers: [
-    LocalStorageServiceService
+    LocalStorageServiceService,
+    PlaylistManagerService
   ],
   bootstrap: [AppComponent]
 })
