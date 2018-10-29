@@ -36,3 +36,4 @@ export class PlaylistManagerService {
     let body = JSON.stringify(playlist);
     return this.http.put('http://localhost:3001/api/playlists/'+ _id, body, httpOptions);
   }
+}

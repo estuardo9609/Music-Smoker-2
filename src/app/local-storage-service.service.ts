@@ -29,7 +29,7 @@ export class LocalStorageServiceService {
         localStorage.setItem('playlists',JSON.stringify(playlists));
       } else{
         playlists = JSON.parse(localStorage.getItem('playlists'));
-        playlist.id = playlists.length;
+        playlist._id = playlists.length;
         playlists.unshift(playlist);
         localStorage.setItem('playlists',JSON.stringify(playlists));
       }
@@ -49,15 +49,15 @@ export class LocalStorageServiceService {
     }
   }
   
-  editPlaylist(id: number, playlist: Playlist):void{
+  editPlaylist(_id: number, playlist: Playlist):void{
     if(localStorage.getItem('playlists')===null){}
     else{
       this.playlists = JSON.parse(localStorage.getItem('playlists'));
-      this.playlists[id].name = playlist.name;
-      this.playlists[id].description = playlist.description;
-      this.playlists[id].genre = playlist.genre;
-      this.playlists[id].rate = playlist.rate;
-      this.playlists[id].author = playlist.author;
+      this.playlists[_id].name = playlist.name;
+      this.playlists[_id].description = playlist.description;
+      this.playlists[_id].genre = playlist.genre;
+      this.playlists[_id].rate = playlist.rate;
+      this.playlists[_id].author = playlist.author;
       localStorage.setItem('playlists',JSON.stringify(this.playlists));
       }
   }
@@ -78,7 +78,7 @@ export class LocalStorageServiceService {
 
   getUniquePlaylist(id: number): Playlist{
     var playlist: Playlist;
-    playlist = {id: 0,name:"",
+    playlist = {_id: 0,name:"",
             description:"",
             genre:"",
             rate: 0,
@@ -88,7 +88,7 @@ export class LocalStorageServiceService {
     else{
       this.playlists = JSON.parse(localStorage.getItem('playlists'));
       for(var i = 0; i<this.playlists.length; i++){
-        if(id == this.playlists[i].id){
+        if(id == this.playlists[i]._id){
           playlist = this.playlists[i];
         }
       }
@@ -102,7 +102,7 @@ export class LocalStorageServiceService {
     else{
       this.playlists = JSON.parse(localStorage.getItem('playlists'));
       for(var i = 0; i<this.playlists.length; i++){
-        this.playlists[i].id = i;
+        this.playlists[i]._id = i;
       }
       localStorage.setItem('playlists',JSON.stringify(this.playlists));
     }
