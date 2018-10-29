@@ -27,3 +27,12 @@ export class PlaylistManagerService {
     let body = JSON.stringify(playlist);
     return this.http.post('http://localhost:3001/api/playlists', body, httpOptions);
   }
+
+  getUniquePlaylist(_id: string) {
+    return this.http.get('http://localhost:3001/api/playlists/'+ _id);
+  }
+
+  editPlaylist(_id: string, playlist: Playlist){
+    let body = JSON.stringify(playlist);
+    return this.http.put('http://localhost:3001/api/playlists/'+ _id, body, httpOptions);
+  }

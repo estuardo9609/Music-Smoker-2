@@ -22,7 +22,7 @@ export class CreatePlaylistComponent implements OnInit {
   
   addPlaylist(){
     this.playlistAdded.emit({
-      id: 0,
+      _id: 0,
       name:this.name,
       description:this.description,
       genre:this.genre,

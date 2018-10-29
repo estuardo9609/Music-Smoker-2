@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Playlist } from '../playlist';
 import { LocalStorageServiceService} from '../local-storage-service.service'
 import { ActivatedRoute } from '@angular/router';
+import {PlaylistManagerService} from '../playlist-manager.service';
+import {Observable, of} from 'rxjs';
+import { PARAMETERS } from '@angular/core/src/util/decorators';
 
 @Component({
   selector: 'app-edit-playlist',
@@ -10,26 +13,28 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditPlaylistComponent implements OnInit {
 
-  playlist:Playlist;
+  playlist;
   arrayIndex:number;
 
-  constructor(private route: ActivatedRoute, public localStorageService: LocalStorageServiceService) { }
+  constructor(private route: ActivatedRoute, public _playlistManagerService: PlaylistManagerService) { }
 
   ngOnInit(): void {
-    this.getUniquePlaylist(),
-    this.getArrayIndex()
+    this.getUniquePlaylist()
   }
 
   getUniquePlaylist():void{
-    this.playlist = this.localStorageService.getUniquePlaylist(+this.route.snapshot.paramMap.get('id'));
-  }
-
-  getArrayIndex():void{
-    this.arrayIndex = this.localStorageService.getIndex(this.playlist);
+    this._playlistManagerService.getUniquePlaylist(this.route.snapshot.paramMap.get('id')).subscribe(
+      data => {this.playlist = data},
+      err => console.error(err),
+      () => console.log('Se ha obtenido el elemento por id')
+    );
   }
 
   editPlaylist(){
-    this.localStorageService.editPlaylist(this.arrayIndex,this.playlist);
+    this._playlistManagerService.editPlaylist(this.route.snapshot.paramMap.get('id'), this.playlist).subscribe(
+      err => console.error(err),
+      () => console.log('Se modificado exitosamente el playlist')
+    );
   }
 }
 
