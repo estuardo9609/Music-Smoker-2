@@ -18,3 +18,11 @@ COPY . /usr/src/app
 
 CMD ng serve --host 0.0.0.0 --port 4200
 
+#$ docker build -t music-smoker .   [ESTO SE UTILIZARÁ PARA CREAR LA IMAGEN DEL CONTENEDOR]
+
+#$ docker run -it \
+#  -v ${pwd}:/usr/src/app \
+#  -v /usr/src/app/node_modules \
+#  -p 4200:4200 \
+#  --rm \
+#  music-smoker
