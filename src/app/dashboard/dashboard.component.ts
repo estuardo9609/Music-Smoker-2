@@ -3,12 +3,13 @@ import { Playlist } from '../playlist';
 import {PlaylistManagerService} from '../playlist-manager.service';
 import {Observable, of} from 'rxjs';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit{
   
   playlists;
 
@@ -30,8 +31,8 @@ export class DashboardComponent implements OnInit {
   removePlaylist(playlist: Playlist){
     this._playlistManagerService.removePlaylist(playlist).subscribe(
       err => console.error(err),
-      () => console.log('Se ha agregado un elemento con exito')
-    );  
+      () => alert('Se ha eliminado un elemento con exito')
+    );
   }
 
 }

@@ -19,7 +19,11 @@ export class RouterContainerComponent implements OnInit {
 
   addPlaylist(playlist: Playlist){
     this._PlaylistManagerService.addPlaylist(playlist).subscribe(
-      
+      err => console.error(err),
+      response => {
+        alert(response.error.message);
+      },
+      () => alert('Se ha agregado exitosamente el playlist')
     );
   }
 

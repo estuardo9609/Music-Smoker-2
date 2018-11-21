@@ -16,7 +16,7 @@ export class PlaylistManagerService {
   constructor(private http:HttpClient) { }
 
   getPlaylist(){
-    return this.http.get('http://localhost:3001/api/playlists');
+    return this.http.get('http://localhost:3001/api/playlists')
   }
 
   removePlaylist(playlist: Playlist){

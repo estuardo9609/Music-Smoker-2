@@ -33,7 +33,10 @@ export class EditPlaylistComponent implements OnInit {
   editPlaylist(){
     this._playlistManagerService.editPlaylist(this.route.snapshot.paramMap.get('id'), this.playlist).subscribe(
       err => console.error(err),
-      () => console.log('Se modificado exitosamente el playlist')
+      response => {
+        alert(response.error.message);
+      },
+      () => alert('Se modificado exitosamente el playlist')
     );
   }
 }

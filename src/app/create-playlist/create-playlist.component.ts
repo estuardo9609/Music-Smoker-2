@@ -34,6 +34,6 @@ export class CreatePlaylistComponent implements OnInit {
     this.description = '';
     this.genre = '';
     this.rate = 0;
-    alert('You have created a new playlist');
+    this.author = '';
   }
 }

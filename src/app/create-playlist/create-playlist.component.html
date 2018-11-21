@@ -23,8 +23,15 @@
         <div>
           <label for="author">Author:</label>
           <input type = "text" class="form-control" name="author" [(ngModel)]="author">
-        </div>  
-        <input type = "submit" value="Add Playlist" class="btn btn-primary">
+        </div>
+        <div>
+          <p>   </p>
+          <input type = "submit" value="Add Playlist" class="btn btn-primary">
+        </div>
     </form>
+    <div>
+      <p>   </p>
+      <a routerLink="/dashboard" class="btn btn-danger">Cancel</a>
+    </div>
   </div>
 </div>
